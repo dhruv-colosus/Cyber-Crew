@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Team[CC]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/newmain.css">
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="icon" href="ccicon.ico">
+
+  <!-- Demo styles -->
+  <style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+
+
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+  position: absolute;
+  left: -9999px;
+}
+.menu-icon:checked + label,
+.menu-icon:not(:checked) + label{
+  position: fixed;
+  top: 63px;
+  left: 75px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu-icon:checked + label:before,
+.menu-icon:not(:checked) + label:before{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 20px;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  border-top: 2px solid #ececee;
+  border-bottom: 2px solid #ececee;
+  transition: border-width 100ms 1500ms ease, 
+              top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1), 
+              background-color 200ms ease,
+              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-icon:checked + label:after,
+.menu-icon:not(:checked) + label:after{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  z-index: 20;
+  top: 10px;
+  right: 4px;
+  background-color: #ececee;
+  margin-top: -1px;
+  transition: width 100ms 1750ms ease, 
+              left 100ms 1750ms ease,
+              margin-top 100ms ease, 
+              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-icon:checked + label:before{
+  top: 10px;
+  transform: rotate(45deg);
+  height: 2px;
+  background-color: #ececee;
+  border-width: 0;
+  transition: border-width 100ms 340ms ease, 
+              top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1), 
+              background-color 200ms 500ms ease,
+              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-icon:checked + label:after{
+  width: 30px;
+  margin-top: 0;
+  left: 0;
+  transform: rotate(-45deg);
+  transition: width 100ms ease,
+              left 100ms ease,  
+              margin-top 100ms 500ms ease, 
+              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav{
+  position: fixed;
+  font-family: 'Oswald', sans-serif;
+  top: 33px;
+  left: 50px;
+  display: block;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  z-index: 9;
+  overflow: hidden;
+  box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
+  background-color: 	#48146e;
+  animation: border-transform 7s linear infinite;
+  transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),  
+              left 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+              transform 250ms 1100ms ease,
+              width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes border-transform{
+    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+}
+
+.menu-icon:checked ~ .nav {
+  animation-play-state: paused;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),  
+              left 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+              transform 250ms 700ms ease,
+              width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.icons{
+  z-index: 10;
+}
+.nav ul{
+  position: absolute;
+  top: 45%;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  text-align: center;
+  transform: translateY(-50%);
+  list-style: none;
+  font-family: 'Oswald', sans-serif;
+}
+.nav ul li{
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  text-align: center;
+  list-style: none;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 250ms linear;
+}
+.nav ul li:nth-child(1){
+  transition-delay: 200ms;
+}
+.nav ul li:nth-child(2){
+  transition-delay: 150ms;
+}
+.nav ul li:nth-child(3){
+  transition-delay: 100ms;
+}
+.nav ul li:nth-child(4){
+  transition-delay: 50ms;
+}
+.nav ul li:nth-child(5){
+  transition-delay: 250ms;
+}
+.nav ul li a{
+  font-size: 4vw;
+  text-transform: uppercase;
+  line-height: 1.2;
+  display: inline-block;
+  position: relative;
+  color: #ececee;
+  transition: all 250ms linear;
+}
+.nav ul li a:hover{
+  text-decoration: none;
+  color: #ffeba7;
+}
+.nav ul li a:after{
+  display: block;
+  position: absolute;
+  top: 50%;
+  content: '';
+  height: 2vh;
+  margin-top: -1vh;
+  width: 0;
+  left: 0;
+  background-color: #353746;
+  opacity: 0.8;
+  transition: width 250ms linear;
+}
+.nav ul li a:hover:after{
+  width: 100%;
+}
+
+
+.menu-icon:checked ~ .nav  ul li {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 350ms ease,
+              transform 250ms ease;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(1){
+  transition-delay: 1400ms;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(2){
+  transition-delay: 1480ms;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(3){
+  transition-delay: 1560ms;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(4){
+  transition-delay: 1640ms;
+}
+
+  
+
+
+@media screen and (max-width: 991px) {
+  .menu-icon:checked + label,
+  .menu-icon:not(:checked) + label{
+    left: 55px;
+  }
+  .logo {
+    left: 30px;
+  }
+  .nav{
+    left: 30px;
+  }
+  .nav h1{
+    font-size: 9vw;
+    -webkit-text-stroke: 2px transparent;
+    text-stroke: 2px transparent;
+    -webkit-text-fill-color: #ffeba7;
+    text-fill-color: #ffeba7;
+    color: #ffeba7;
+  }
+  .nav ul li a{
+    font-size: 8vh;
+  }
+  .logo-1{
+    padding-top: 100px;
+  }
+}
+
+    body {
+      background: #350855;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 360px;
+      background: #ffffff;
+
+
+    }
+
+    .swiper-slide .Imagebox {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+
+    }
+
+    .swiper-slide .Imagebox img {
+      width: 100%
+    }
+
+    .swiper-slide .details {
+      box-sizing: border-box;
+      font-size: 20px;
+      font-family: bebas;
+      padding: 10px;
+
+    }
+
+    .swiper-slide .details h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 27px;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    .swiper-slide .details h3 span {
+      font-size: 18px;
+      color: #f44336
+    }
+    .logo-1{
+      font-size: 50px;
+      color: #ececee;
+      text-align: center;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    .mainfooter{
+      position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: transparent;
+     color: white;
+     text-align: center;
+   
+   }
+   .mainfooter h3{
+     font-size: 1rem;
+   }
+   
+  </style>
+</head>
+
+<body>
+  <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+  <label for="menu-icon"></label>
+  <nav class="nav"> 		
+    <ul class="pt-5">
+      <li><a href="index.htm#">Home</a></li>
+      <li><a href="COMPUFEST2020/index.html">Compufest 2020</a></li>
+      <li><a href="#">Sherlocked 2.20</a></li>
+      <li><a href="team.htm">Team</a></li>
+      <li><a href="Contact.html">Contact Us</a></li>
+    </ul>
+</nav>
+  <p class="logo-1"> Meet The Team </p>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/Me.png">
+        </div>
+        <div class="details">
+          <h3>Rahul Sharma<br><span>President </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/deora.JPG">
+        </div>
+        <div class="details">
+          <h3>Dhruv Deora<br><span>Vice President </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/kallu.jpeg">
+        </div>
+        <div class="details">
+          <h3>Kalrav Varshney<br><span>Programming Head </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/dipumc.jpg">
+        </div>
+        <div class="details">
+          <h3>Deepanshu Singh<br><span>Programming Head</span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/beta.jpeg">
+        </div>
+        <div class="details">
+          <h3>Arnav Verma<br><span>Creative Head </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/deepumc.jpg">
+        </div>
+        <div class="details">
+          <h3>Shaurya Pratap Singh<br><span>Creative Head</span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/kshitij.jpg">
+        </div>
+        <div class="details">
+          <h3>Kshitij Kumar <br><span>Gaming Head </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/kushlol.jpg">
+        </div>
+        <div class="details">
+          <h3>Kushagra Mathur<br><span>Tech Support </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/darsh.jpg">
+        </div>
+        <div class="details">
+          <h3>Darsh Kejriwal<br><span>Tech Support </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/simran.jpg">
+        </div>
+        <div class="details">
+          <h3>Simran Sagar<br><span>Database Head </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/riyanew.jpeg">
+        </div>
+        <div class="details">
+          <h3>Riya Jain<br><span>Database Head </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/Idk.jpg">
+        </div>
+        <div class="details">
+          <h3>Anushka Sharma<br><span>Database Head </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/ananya.jpeg">
+        </div>
+        <div class="details">
+          <h3>Ananya Mathur<br><span>Hospitality </span></h3>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class=" Imagebox">
+          <img src="img/Niyati.jpg">
+        </div>
+        <div class="details">
+          <h3>Niyati Pahwa
+            <br><span>Hospitality </span></h3>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination">
+
+    </div>
+  </div>
+  <footer>
+    <div class="mainfooter">
+      <h3>Made with &hearts; by Dhruv Deora and Rahul Sharma</h3>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 10,
+        stretch: 6,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" media="all" href="CSS/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Khand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+
+  <link rel="icon" href="ccicon.ico">
+  <title>Cyber Crew</title>
+
+</head>
+
+<body>
+
+
+
+
+  <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+  <label for="menu-icon"></label>
+  <nav class="nav">
+    <ul class="pt-5">
+      <li><a href="index.htm#">Home</a></li>
+      <li><a href="COMPUFEST2020/index.html">Compufest 2020</a></li>
+      <li><a href="#">Sherlocked 2.20</a></li>
+      <li><a href="team.htm">Team</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+
+
+  <section id='second' style="position:static;"> </section>
+  <div class="scale-in-hor-right"></div>
+  <div class="fade-in">
+    <p></p>
+  </div>
+
+  <div class="main">
+    <div class="cc_logo">
+      <img src="cyber_crew.png" width="">
+    </div>
+    <div class="cyber_crew">
+      <div class="text"></div>
+    </div>
+
+    <div class="typewriter">
+      <div class="typewriter-text">The Legacy Continues...</div>
+    </div>
+    <div class="cc_text">
+      <h1>2.20</h1>
+    </div>
+  </div>
+  <div class="containerclock">
+
+    <ul>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Secs</li>
+    </ul>
+  </div>
+  <script src="JS/jquery.js"></script>
+  <script src="JS/three.r95.min.js"></script>
+  <script src="JS/vanta.globe.min.js"></script>
+  <script src="JS/text.js"> </script>
+  <script>
+    VANTA.GLOBE({
+      el: "#second",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 823,
+      minWidth: 355.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+    })
+  </script>
+
+
+  <script>
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    let countDown = new Date('OCT 12, 2020 00:00:00').getTime(),
+      x = setInterval(function () {
+
+        let now = new Date().getTime(),
+          distance = countDown - now;
+
+        document.getElementById('days').innerText = Math.floor(distance / (day)),
+          document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        //if (distance < 0) {
+        //  clearInterval(x);
+        //  'IT'S MY BIRTHDAY!;
+        //}
+
+      }, second)
+  </script>
+
+
+
+
+</body>
+
+</html>
